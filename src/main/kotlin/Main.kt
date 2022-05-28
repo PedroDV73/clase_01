@@ -45,7 +45,7 @@
      print(coffe2)
 
 }*/
-class App: DownloadListener {
+/*class App: DownloadListener {
      override fun onDownloadStarted() {
          println("Download started")
      }
@@ -58,8 +58,10 @@ class App: DownloadListener {
          println("$progress% downloaded")
      }
 
- }
-fun main() {
+ }*/
+
+/* IMPLEMENTAR UNA INTERFAZ ATRAVES DE UN OBJETO*/
+/*fun main() {
 
     val downloader = Downloader()
     downloader.downloadListener = object : DownloadListener {
@@ -77,12 +79,34 @@ fun main() {
     }
     downloader.downloadFile("newSong.mp3")
 
+}*/
+data class Person(
+    val id: String,
+    val firstName: String,
+    val lastName: String,
+    val country: String
+){
+    fun getName() = "$firstName $lastName"
+}
+fun main() {
+    val person = Person("1", "Pedro", "Del valle", "Perú")
+    val person1 = Person("1", "Pedro", "Del valle", "Perú")
+    println(person==person1)
+    println(person.getName())
+
+    //instanciar n veces
+    //componentN
+    //---------*/
+    //println(person.component1())
+    //println(person.component2())
+    //println(person.component3())
+    //println(person.component4())
+
+    val (id, firstName, lastName, country) = person // destructuring declaration
+    println("$id $firstName $lastName $country")
 
 
 }
-
-
-
     /*fun buildAcuario() {
         val Acuario = Acuario()
         val length :Int=100
