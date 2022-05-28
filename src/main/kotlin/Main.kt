@@ -18,12 +18,22 @@
     val box2 = Box();
 }*/
 
-fun main() {
+/*fun main() {
     val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
     coffeeMachine.makeCoffee();
     coffeeMachine.makeCapuccino();
 
+}*/
+
+fun main() {
+    val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
+    val info = coffeeMachine.machineInfo();
+    val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
+    println(coffee)
+    println(info)
+
 }
+
 
 
     /*fun buildAcuario() {
