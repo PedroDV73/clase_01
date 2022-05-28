@@ -34,7 +34,7 @@
 
 }*/
 
- fun main() {
+ /*fun main() {
     val coffeeMachine = PremiumCoffeeMachine(10000.0, "Brown")
     val info = coffeeMachine.machineInfo();
     val coffee = coffeeMachine.makeCoffee("CAPPUCCINO")
@@ -43,6 +43,41 @@
      val simpleCoffeeMachine=CoffeeMachine(2000.0, "Black")
      val coffe2 = simpleCoffeeMachine.makeCoffee("Expreso")
      print(coffe2)
+
+}*/
+class App: DownloadListener {
+     override fun onDownloadStarted() {
+         println("Download started")
+     }
+
+     override fun onDownloadComplete(file: String) {
+         println("$file downloaded")
+     }
+
+     override fun onProgressUpdate(progress: Int) {
+         println("$progress% downloaded")
+     }
+
+ }
+fun main() {
+
+    val downloader = Downloader()
+    downloader.downloadListener = object : DownloadListener {
+        override fun onDownloadStarted() {
+            println("Download started")
+        }
+
+        override fun onDownloadComplete(file: String) {
+            println("$file downloaded")
+        }
+
+        override fun onProgressUpdate(progress: Int) {
+            println("$progress% downloaded")
+        }
+    }
+    downloader.downloadFile("newSong.mp3")
+
+
 
 }
 
